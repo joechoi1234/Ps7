@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="josep"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-04-10 07:52:18 PM"/>
+        <attribute name="created" value="am9zZXA7REVTS1RPUC1PNjBGMlZHOzIwMjItMDQtMTA7MDc6MzQ6NDIgUE07Mjg2MQ=="/>
+        <attribute name="edited" value="am9zZXA7REVTS1RPUC1PNjBGMlZHOzIwMjItMDQtMTA7MDc6NTI6MTggUE07MjsyOTcz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="hits" type="Real" array="False" size=""/>
+            <declare name="bats" type="Real" array="False" size=""/>
+            <declare name="batavg" type="Real" array="False" size=""/>
+            <input variable="lastname"/>
+            <input variable="hits"/>
+            <input variable="bats"/>
+            <call expression="compbatavg(hits, bats)"/>
+            <assign variable="batavg" expression="compbatavg(hits, bats)"/>
+            <output expression="&quot;Last name: &quot; &amp; lastname" newline="True"/>
+            <output expression="&quot;Bat average: &quot; &amp; batavg" newline="True"/>
+        </body>
+    </function>
+    <function name="compbatavg" type="Real" variable="batavg">
+        <parameters>
+            <parameter name="hits" type="Real" array="False"/>
+            <parameter name="bats" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="batavg" type="Real" array="False" size=""/>
+            <assign variable="batavg" expression="bats / hits"/>
+        </body>
+    </function>
+</flowgorithm>
